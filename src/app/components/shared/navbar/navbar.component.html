@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-space">
+  <div class="left-side">
+    <img src="assets/img/logo.png" alt="Logo" class="logo-img" />
+  </div>
+  <div class="brand-margin">
+    <a class="navbar-brand" href="#"></a>
+  </div>
+
+  <div class="right-side">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div
+      class="collapse navbar-collapse margin-left-menu"
+      id="navbarSupportedContent"
+    >
+      <ul class="navbar-nav ml-auto mr-auto pl-2 pr-2">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">About us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Tours
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a
+              class="dropdown-item"
+              routerLink="/tours"
+              *ngFor="let product of products"
+              >{{ product.fields.title }}</a
+            >
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/transportation">Transportation</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
