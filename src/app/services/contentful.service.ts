@@ -19,24 +19,6 @@ export class ContentfulService {
     this.client.getEntry(contentId).then((entry) => console.log(entry));
   }
 
-  // return all sections
-  getSections(query?: object): Promise<contentful.Entry<any>[]> {
-    return this.client
-      .getEntries(
-        Object.assign(
-          {
-            content_type: environment.contentful.contentTypeIds.sections,
-          },
-          query
-        )
-      )
-      .then((res) => res.items);
-  }
-  // return one section
-  getSection(id: string): any {
-    return from(this.client.getEntry(id));
-  }
-
   // return all products
   getProducts(query?: object): Promise<contentful.Entry<any>[]> {
     return this.client
@@ -53,5 +35,19 @@ export class ContentfulService {
   // return one product
   getProduct(id: string): any {
     return this.client.getEntry(id).then((entry) => entry.fields);
+  }
+
+  // return all products
+  getTransportations(query?: object): Promise<contentful.Entry<any>[]> {
+    return this.client
+      .getEntries(
+        Object.assign(
+          {
+            content_type: environment.contentful.contentTypeIds.sections,
+          },
+          query
+        )
+      )
+      .then((res) => res.items);
   }
 }

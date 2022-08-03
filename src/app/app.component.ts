@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { Meta } from "@angular/platform-browser";
+import { CanonicalService } from "./services/canonical.service";
 
 @Component({
   selector: "app-root",
@@ -6,5 +8,25 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title = "playa-colorada";
+  constructor(
+    private metaTagService: Meta,
+    private canonical: CanonicalService
+  ) {}
+
+  ngOnInit() {
+    // create a canonical url
+    this.canonical.createCanonicalLink();
+    // adding meta tags to facilitate de SEO
+    this.metaTagService.addTags([
+      { charset: "UTF-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "date", content: "2020-02-10", scheme: "YYYY-MM-DD" },
+      { name: "keywords", content: "Playa Colorada WebPage info" },
+      { name: "author", content: "D 5" },
+      { name: "robots", content: "index, follow" },
+    ]);
+  }
+  onActivate(event: any) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 }

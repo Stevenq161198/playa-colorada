@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
+import { BrowserModule, Meta } from "@angular/platform-browser";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -12,6 +12,7 @@ import { TransportsComponent } from "./components/transports/transports.componen
 
 import { ContentfulService } from "./services/contentful.service";
 import { NgxSkeletonLoaderModule } from "ngx-skeleton-loader";
+import { ContactComponent } from "./components/contact/contact.component";
 
 @NgModule({
   declarations: [
@@ -22,9 +23,10 @@ import { NgxSkeletonLoaderModule } from "ngx-skeleton-loader";
     AboutUsComponent,
     ToursComponent,
     TransportsComponent,
+    ContactComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgxSkeletonLoaderModule],
-  providers: [ContentfulService],
+  providers: [ContentfulService, Meta],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

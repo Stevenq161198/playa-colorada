@@ -1,1 +1,10 @@
 <p>transports works!</p>
+
+<div class="routes-info">
+  <div *ngFor="let item of routes; let i = index">
+    <p *ngFor="let route of routes; let i = index">
+      {{ item.fields.ruta[i] }} <span>{{ item.fields.schedule[i] }}</span>
+    </p>
+    <p>{{ item.fields.price }}</p>
+  </div>
+</div>

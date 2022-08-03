@@ -1,9 +1,12 @@
 <div>
   <div class="tour-header mt-5">
     <h1>En Playa Colorada te ofrecemos los mejores tours</h1>
-    <p>Si necesitas mas informacion, no dudes en contactarnos!</p>
+    <p>Si necesitas mas información, no dudes en contactarnos!</p>
   </div>
-  <div class="skeleton" *ngIf="!this.isDataTour">
+  <div class="skeleton mt-5" *ngIf="!this.isDataTour">
+    <ngx-skeleton-loader appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader appearance="line"></ngx-skeleton-loader>
+    <br />
     <ngx-skeleton-loader appearance="line"></ngx-skeleton-loader>
   </div>
   <div class="data-tour" *ngIf="this.isDataTour">
@@ -11,6 +14,22 @@
     <br />
     <p>{{ tour.description }}</p>
     <br />
-    <p>Rutas:</p>
+    <p class="font-weight-bold">Rutas:</p>
+    <div class="routes-info">
+      <p *ngFor="let route of tour.routes; let i = index">
+        {{ route }}:
+        <span class="text-decoration-line">${{ tour.prices[i] }}</span>
+      </p>
+    </div>
+    <br />
+    <hr size="30" noshade class="line" />
+    <br />
+    <div class="tour-img">
+      <img src="{{ tour.images.fields.file.url }}" alt="Tour Imagen" class="" />
+    </div>
+    <br />
+    <div class="wrap mt-5">
+      <button class="button" (click)="navigate()">Contactanos</button>
+    </div>
   </div>
 </div>

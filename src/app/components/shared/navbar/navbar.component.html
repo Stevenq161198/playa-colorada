@@ -40,11 +40,14 @@
           >
             Tours
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div
+            class="dropdown-menu white-space-nowrap overflow-hidden text-overflow-ellipsis"
+            aria-labelledby="navbarDropdown"
+          >
             <a
               class="dropdown-item"
-              [routerLink]="['/tour', product.sys.id]"
               *ngFor="let product of products"
+              [routerLink]="['/tour', product.sys.id]"
               >{{ product.fields.title }}</a
             >
           </div>
@@ -56,7 +59,7 @@
           <a class="nav-link" routerLink="/about">About us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/transportation">Contact us</a>
+          <a class="nav-link" routerLink="/contact">Contact us</a>
         </li>
       </ul>
     </div>

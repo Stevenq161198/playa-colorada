@@ -17,10 +17,16 @@ export class NavbarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+
     this.contentfulService
       .getProducts()
       .then((products) => (this.products = products));
 
     //this.contentfulService.logContent("7cMTrKgW9T3gIFayvajDc");
+  }
+  navigate(id: any) {
+    this.router.navigate([`tour/id`]);
+    //[routerLink]="['/tour', product.sys.id]"
   }
 }
