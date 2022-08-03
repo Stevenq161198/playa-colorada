@@ -20,5 +20,7 @@ export class NavbarComponent implements OnInit {
     this.contentfulService
       .getProducts()
       .then((products) => (this.products = products));
+
+    //this.contentfulService.logContent("7cMTrKgW9T3gIFayvajDc");
   }
 }

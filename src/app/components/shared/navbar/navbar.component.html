@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-space">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-space">
   <div class="left-side">
     <img src="assets/img/logo.png" alt="Logo" class="logo-img" />
   </div>
@@ -27,9 +27,7 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/home">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/about">About us</a>
-        </li>
+
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -45,7 +43,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a
               class="dropdown-item"
-              routerLink="/tours"
+              [routerLink]="['/tour', product.sys.id]"
               *ngFor="let product of products"
               >{{ product.fields.title }}</a
             >
@@ -53,6 +51,12 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/transportation">Transportation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/transportation">Contact us</a>
         </li>
       </ul>
     </div>

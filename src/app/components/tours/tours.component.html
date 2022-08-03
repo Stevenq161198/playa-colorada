@@ -1,1 +1,16 @@
-<p>tours works!</p>
+<div>
+  <div class="tour-header mt-5">
+    <h1>En Playa Colorada te ofrecemos los mejores tours</h1>
+    <p>Si necesitas mas informacion, no dudes en contactarnos!</p>
+  </div>
+  <div class="skeleton" *ngIf="!this.isDataTour">
+    <ngx-skeleton-loader appearance="line"></ngx-skeleton-loader>
+  </div>
+  <div class="data-tour" *ngIf="this.isDataTour">
+    <h2>{{ tour.title }}</h2>
+    <br />
+    <p>{{ tour.description }}</p>
+    <br />
+    <p>Rutas:</p>
+  </div>
+</div>

@@ -11,6 +11,7 @@ import { ToursComponent } from "./components/tours/tours.component";
 import { TransportsComponent } from "./components/transports/transports.component";
 
 import { ContentfulService } from "./services/contentful.service";
+import { NgxSkeletonLoaderModule } from "ngx-skeleton-loader";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { ContentfulService } from "./services/contentful.service";
     ToursComponent,
     TransportsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, NgxSkeletonLoaderModule],
   providers: [ContentfulService],
   bootstrap: [AppComponent],
 })

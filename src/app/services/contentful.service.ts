@@ -52,6 +52,6 @@ export class ContentfulService {
   }
   // return one product
   getProduct(id: string): any {
-    return from(this.client.getEntry(id));
+    return this.client.getEntry(id).then((entry) => entry.fields);
   }
 }
