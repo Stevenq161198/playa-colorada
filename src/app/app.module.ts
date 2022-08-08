@@ -13,6 +13,8 @@ import { TransportsComponent } from "./components/transports/transports.componen
 import { ContentfulService } from "./services/contentful.service";
 import { NgxSkeletonLoaderModule } from "ngx-skeleton-loader";
 import { ContactComponent } from "./components/contact/contact.component";
+import { TourPageComponent } from "./components/tour-page/tour-page.component";
+import Backpax from "backpax";
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { ContactComponent } from "./components/contact/contact.component";
     ToursComponent,
     TransportsComponent,
     ContactComponent,
+    TourPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgxSkeletonLoaderModule],
   providers: [ContentfulService, Meta],

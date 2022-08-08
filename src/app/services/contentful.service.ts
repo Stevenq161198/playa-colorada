@@ -50,4 +50,9 @@ export class ContentfulService {
       )
       .then((res) => res.items);
   }
+
+  // return all products
+  getHomeInfo(id: string): any {
+    return this.client.getEntry(id).then((entry) => entry.fields);
+  }
 }
