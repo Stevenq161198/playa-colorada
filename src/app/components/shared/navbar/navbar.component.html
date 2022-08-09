@@ -1,12 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark navbar-space">
-  <div class="left-side">
-    <img src="assets/img/logo.png" alt="Logo" class="logo-img" />
-  </div>
-  <div class="brand-margin">
-    <a class="navbar-brand" href="#"></a>
-  </div>
-
-  <div class="right-side">
+<nav
+  class="navbar navbar-expand-lg navbar-dark sticky-top justify-content-between"
+>
+  <img src="assets/img/logo.png" alt="Logo" class="logo-img" />
+  <div>
     <button
       class="navbar-toggler"
       type="button"
@@ -19,16 +15,12 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div
-      class="collapse navbar-collapse margin-left-menu"
-      id="navbarSupportedContent"
-    >
-      <ul class="navbar-nav ml-auto mr-auto pl-2 pr-2">
-        <li class="nav-item">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" [routerLinkActive]="['active']">
           <a class="nav-link" routerLink="/home">Home</a>
         </li>
-
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" [routerLinkActive]="['active']">
           <a
             class="nav-link dropdown-toggle"
             href="#"
@@ -37,14 +29,10 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-            routerLink="/tours"
           >
             Tours
           </a>
-          <div
-            class="dropdown-menu white-space-nowrap overflow-hidden text-overflow-ellipsis"
-            aria-labelledby="navbarDropdown"
-          >
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a
               class="dropdown-item"
               *ngFor="let product of products"
@@ -53,13 +41,13 @@
             >
           </div>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" [routerLinkActive]="['active']">
           <a class="nav-link" routerLink="/transportation">Transportation</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" [routerLinkActive]="['active']">
           <a class="nav-link" routerLink="/about">About us</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" [routerLinkActive]="['active']">
           <a class="nav-link" routerLink="/contact">Contact us</a>
         </li>
       </ul>

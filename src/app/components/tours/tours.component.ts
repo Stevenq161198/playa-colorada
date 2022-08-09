@@ -37,7 +37,7 @@ export class ToursComponent implements OnInit {
   async getData() {
     this.tour = await this.contentfulService.getProduct(this.tourId);
     this.isDataLoaded(this.tour);
-    //console.log("tour: ", this.tour);
+    console.log("tour: ", this.tour);
   }
 
   isDataLoaded(data: any) {

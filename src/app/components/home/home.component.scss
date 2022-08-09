@@ -1,47 +1,39 @@
-body {
-  margin: 0;
-}
-
-main {
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
 section {
-  transform-style: preserve-3d;
   position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 80vh;
+  height: 100%;
+
   color: black;
 }
 
 .sec1 {
-  background-color: #ffff;
-  z-index: 1;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-image: url(../../../assets/img/sirena-ranger-station.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .sec2 {
   background-color: #005f87;
-  z-index: 1;
 }
+.sec2-text {
+  padding-top: 10%;
+  text-align: center;
+  margin: auto;
+
+  h1 {
+    color: white;
+  }
+  h2 {
+    color: white;
+    padding: 5rem;
+  }
+}
+
 .sec3 {
   background-color: #ffff;
-  z-index: 1;
-}
-
-section h1 {
-  text-align: center;
-  font-size: 4rem;
-  font-family: sans-serif;
-}
-
-@media screen and (min-width: 768px) {
-  section h1 {
-    font-size: 5rem;
-  }
 }
 
 .cta-two {
@@ -71,4 +63,66 @@ section h1 {
   50% {
     left: 50px;
   }
+}
+
+.logo-home {
+  height: auto;
+  width: 80%;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  text-align: center;
+}
+
+.flex-item-left {
+  margin-top: 15%;
+  justify-content: center;
+  justify-items: center;
+  padding: 10px;
+  flex: 50%;
+  color: white;
+}
+
+.flex-item-right {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  padding: 10px;
+  flex: 50%;
+}
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+span {
+  position: relative;
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 900;
+  //font-size: 64px;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+
+/* We create a pseudo element and blur it using the SVG filter. We’ll grab the content from the custom HTML attribute. */
+
+span:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: attr(filter-content);
+
+  filter: url(#motion-blur-filter);
+}
+
+/* We hide the SVG filter element from the DOM as it would take up some space */
+
+svg {
+  display: none;
 }

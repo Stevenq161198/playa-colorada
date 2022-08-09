@@ -1,11 +1,35 @@
 <section class="sec1">
-  <h1>Fun fact:</h1>
+  <div class="flex-container">
+    <div class="flex-item-left">
+      <h1>Ready for</h1>
+      <h3>a new</h3>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <!-- filterUnits is required to prevent clipping the blur outside the viewBox -->
+
+          <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+            <!-- We only want horizontal blurring. x: 100, y: 0 -->
+
+            <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+          </filter>
+        </svg>
+
+        <!-- We use a custom attribute to set the text that the pseudo element should display and blur. In this case, we use the first character of the word. -->
+
+        <span filter-content="S">Adventure?</span>
+      </div>
+    </div>
+    <div class="flex-item-right">
+      <img src="assets/img/logo.png" alt="" class="logo-home" />
+    </div>
+  </div>
 </section>
 <section class="sec2">
-  <h1>
-    The sound that occurs when you snap your fingers is made by your middle
-    finger hitting your palm!
-  </h1>
+  <div class="sec2-text">
+    <h1>WE HAVE THE BEST TOURISM AND TRANSPORTATION SERVICE FOR YOU!</h1>
+    <br />
+    <h2>ALWAYS TAKING IN COUNT SAFETY PRACTICES AND RESPONSIBLE TOURISM</h2>
+  </div>
   <div class="cta-two"></div>
   <!-- <img src="assets/img/wave.png" class="wave" alt="" /> -->
 </section>

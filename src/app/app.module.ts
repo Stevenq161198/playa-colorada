@@ -13,8 +13,11 @@ import { TransportsComponent } from "./components/transports/transports.componen
 import { ContentfulService } from "./services/contentful.service";
 import { NgxSkeletonLoaderModule } from "ngx-skeleton-loader";
 import { ContactComponent } from "./components/contact/contact.component";
-import { TourPageComponent } from "./components/tour-page/tour-page.component";
 import Backpax from "backpax";
+import {
+  NgbPaginationModule,
+  NgbAlertModule,
+} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -26,9 +29,14 @@ import Backpax from "backpax";
     ToursComponent,
     TransportsComponent,
     ContactComponent,
-    TourPageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgxSkeletonLoaderModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgxSkeletonLoaderModule,
+    NgbPaginationModule,
+    NgbAlertModule,
+  ],
   providers: [ContentfulService, Meta],
   bootstrap: [AppComponent],
 })

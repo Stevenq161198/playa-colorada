@@ -1,7 +1,7 @@
 <div>
-  <div class="tour-header mt-5">
-    <h1>En Playa Colorada te ofrecemos los mejores tours</h1>
-    <p>Si necesitas mas información, no dudes en contactarnos!</p>
+  <div class="tour-header mt-5 mx-3">
+    <h1>At Playa Colorada we offer you the best tours</h1>
+    <p>Do not hesitate to contact us!</p>
   </div>
   <div class="skeleton mt-5" *ngIf="!this.isDataTour">
     <ngx-skeleton-loader appearance="line"></ngx-skeleton-loader>
@@ -25,7 +25,38 @@
     <hr size="30" noshade class="line" />
     <br />
     <div class="tour-img">
-      <img src="{{ tour.images.fields.file.url }}" alt="Tour Imagen" class="" />
+      <!-- <img src="{{ tour.imagesM.fields.file.url }}" alt="Tour Imagen" class="" /> -->
+    </div>
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            *ngFor="let image of tour.imagesM"
+            src="{{ image.fields.file.url }}"
+            alt="Los Angeles"
+            class="d-block w-100"
+          />
+        </div>
+      </div>
+
+      <!-- Left and right controls/icons -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#demo"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#demo"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
     </div>
     <br />
     <div class="wrap mt-5">
