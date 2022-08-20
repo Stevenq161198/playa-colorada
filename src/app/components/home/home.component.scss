@@ -28,12 +28,59 @@ section {
   }
   h2 {
     color: white;
-    padding: 5rem;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    font-weight: 900;
+  }
+  h3 {
+    color: white;
   }
 }
 
 .sec3 {
   background-color: #ffff;
+  padding-top: 10%;
+  text-align: center;
+
+  span {
+    font-weight: 800;
+    font-size: xx-large;
+  }
+
+  .sec3-item {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: row;
+
+    text-align: center;
+
+    .sec3-l {
+      flex: 50%;
+      text-align: center;
+      padding-top: 3rem;
+      padding: 5rem;
+
+      i:hover {
+        transform: scale(1.2);
+      }
+    }
+    .sec3-r {
+      flex: 50%;
+      padding-top: 3rem;
+      img {
+        width: 80%;
+        border-radius: 40px;
+        height: auto;
+        object-fit: scale-down;
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .sec3 .sec3-item {
+    flex-direction: column;
+  }
 }
 
 .cta-two {
@@ -94,7 +141,7 @@ section {
   flex: 50%;
 }
 /* Responsive layout - makes a one column-layout instead of two-column layout */
-@media (max-width: 800px) {
+@media screen and (max-width: 800px) {
   .flex-container {
     flex-direction: column;
   }
@@ -125,4 +172,37 @@ span:before {
 
 svg {
   display: none;
+}
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  width: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 45px;
+  //font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.button:hover {
+  background-color: #ff9c00;
+  box-shadow: 0px 15px 20px rgba(255, 155, 24, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
 }

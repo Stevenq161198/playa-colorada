@@ -12,6 +12,12 @@
   padding: 0;
 }
 
-nav a:hover {
+#navbarSupportedContent a:hover {
   animation: bounce 1s infinite;
+}
+
+.custom-select {
+  background-color: transparent;
+  border: none;
+  color: white;
 }

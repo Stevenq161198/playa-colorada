@@ -1,7 +1,6 @@
 import { Injectable, NgModuleFactory } from "@angular/core";
 import * as contentful from "contentful";
 import { environment } from "../../environments/environment.prod";
-import { Observable, from, map } from "rxjs";
 
 @Injectable({
   providedIn: "root",
@@ -16,7 +15,8 @@ export class ContentfulService {
 
   // console logs a response for debugging
   logContent(contentId: string) {
-    this.client.getEntry(contentId).then((entry) => console.log(entry));
+    //this.client.getEntry(contentId).then((entry) => console.log(entry));
+    //this.client.getLocales();
   }
 
   // return all products
@@ -33,8 +33,13 @@ export class ContentfulService {
       .then((res) => res.items);
   }
   // return one product
-  getProduct(id: string): any {
-    return this.client.getEntry(id).then((entry) => entry.fields);
+  getProduct(id: string, lang: string): any {
+    const app = this.client.getEntry(id, { locale: lang });
+    //console.log(app);
+
+    return this.client
+      .getEntry(id, { locale: lang })
+      .then((entry) => entry.fields);
   }
 
   // return all products

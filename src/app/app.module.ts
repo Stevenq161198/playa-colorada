@@ -13,7 +13,16 @@ import { TransportsComponent } from "./components/transports/transports.componen
 import { ContentfulService } from "./services/contentful.service";
 import { NgxSkeletonLoaderModule } from "ngx-skeleton-loader";
 import { ContactComponent } from "./components/contact/contact.component";
-import Backpax from "backpax";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
 import {
   NgbPaginationModule,
   NgbAlertModule,
@@ -32,12 +41,20 @@ import {
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NgxSkeletonLoaderModule,
     NgbPaginationModule,
     NgbAlertModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
-  providers: [ContentfulService, Meta],
+  providers: [ContentfulService, Meta, HttpClient],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -19,6 +19,7 @@ export class ToursComponent implements OnInit {
   tourId!: string;
   isDataTour: boolean = false;
   tour: any = {};
+  lang!: string;
 
   ngOnInit() {
     // clean variables
@@ -29,13 +30,15 @@ export class ToursComponent implements OnInit {
     this.routeSub = this.route.params.subscribe((params) => {
       this.tourId = params["id"];
       // console.log(this.tourId); //log the value of id
-    });
 
+      //this.contentfulService.logContent("7cMTrKgW9T3gIFayvajDc");
+    });
+    this.lang = localStorage.getItem("lang") || "en";
     this.getData();
   }
 
   async getData() {
-    this.tour = await this.contentfulService.getProduct(this.tourId);
+    this.tour = await this.contentfulService.getProduct(this.tourId, this.lang);
     this.isDataLoaded(this.tour);
     console.log("tour: ", this.tour);
   }

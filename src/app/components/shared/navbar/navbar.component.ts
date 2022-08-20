@@ -11,12 +11,15 @@ import { ContentfulService } from "src/app/services/contentful.service";
 export class NavbarComponent implements OnInit {
   public products: Entry<any>[] = [];
 
+  lang: any;
+
   constructor(
     private router: Router,
     private contentfulService: ContentfulService
   ) {}
 
   ngOnInit(): void {
+    this.lang = localStorage.getItem("lang") || "en";
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
 
     this.contentfulService
@@ -28,5 +31,11 @@ export class NavbarComponent implements OnInit {
   navigate(id: any) {
     this.router.navigate([`tour/id`]);
     //[routerLink]="['/tour', product.sys.id]"
+  }
+  changeLang(lang: any) {
+    localStorage.removeItem("lang");
+    console.log(lang);
+    localStorage.setItem("lang", lang);
+    window.location.reload();
   }
 }

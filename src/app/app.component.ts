@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Meta } from "@angular/platform-browser";
+import { TranslateService } from "@ngx-translate/core";
 import { CanonicalService } from "./services/canonical.service";
 
 @Component({
@@ -10,8 +11,12 @@ import { CanonicalService } from "./services/canonical.service";
 export class AppComponent {
   constructor(
     private metaTagService: Meta,
-    private canonical: CanonicalService
-  ) {}
+    private canonical: CanonicalService,
+    private translateService: TranslateService
+  ) {
+    this.translateService.setDefaultLang("en-US");
+    this.translateService.use(localStorage.getItem("lang") || "en_US");
+  }
 
   ngOnInit() {
     // create a canonical url

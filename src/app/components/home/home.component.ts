@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { ContentfulService } from "src/app/services/contentful.service";
 
 @Component({
@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private contentfulService: ContentfulService
+    private contentfulService: ContentfulService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -30,7 +31,6 @@ export class HomeComponent implements OnInit {
     );
     this.isDataLoaded(this.data);
     console.log("data: ", this.data);
-    this.imageURL = this.data.image.fields.file.url;
   }
 
   isDataLoaded(data: any) {
@@ -39,5 +39,8 @@ export class HomeComponent implements OnInit {
     } else {
       this.isData = false;
     }
+  }
+  navigate() {
+    this.router.navigate(["/contact"]);
   }
 }
