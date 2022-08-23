@@ -1,7 +1,7 @@
 <div>
   <div class="tour-header mt-5 mx-3">
-    <h1>At Playa Colorada we offer you the best tours</h1>
-    <p>Do not hesitate to contact us!</p>
+    <h1>En Playa Colorada te ofrecemos los mejores Tours</h1>
+    <p>¡No dudes en contactarnos!</p>
   </div>
   <div class="skeleton mt-5" *ngIf="!this.isDataTour">
     <ngx-skeleton-loader appearance="line"></ngx-skeleton-loader>
@@ -13,6 +13,11 @@
     <h2>{{ tour.title }}</h2>
     <br />
     <p>{{ tour.description }}</p>
+    <br />
+    <h3>{{ "What is included?" | translate }}</h3>
+    <ul>
+      <li *ngFor="let data of tour.includes">{{ data }}</li>
+    </ul>
     <br />
     <p class="font-weight-bold">Rutas:</p>
     <div class="routes-info">

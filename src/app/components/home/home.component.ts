@@ -22,24 +22,9 @@ export class HomeComponent implements OnInit {
     this.data = {};
     this.isData = false;
 
-    this.getData();
+    // this.getData();
   }
 
-  async getData() {
-    this.data = await this.contentfulService.getHomeInfo(
-      "1dzCS1bzH5OS1gDNdo09X1"
-    );
-    this.isDataLoaded(this.data);
-    console.log("data: ", this.data);
-  }
-
-  isDataLoaded(data: any) {
-    if (data != undefined && data != null) {
-      this.isData = true;
-    } else {
-      this.isData = false;
-    }
-  }
   navigate() {
     this.router.navigate(["/contact"]);
   }

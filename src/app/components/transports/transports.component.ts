@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Subscription } from "rxjs";
 import { ContentfulService } from "src/app/services/contentful.service";
 
@@ -16,7 +16,8 @@ export class TransportsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private contentfulService: ContentfulService
+    private contentfulService: ContentfulService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -39,5 +40,8 @@ export class TransportsComponent implements OnInit {
     } else {
       this.isDataRoutes = false;
     }
+  }
+  navigate() {
+    this.router.navigate(["/contact"]);
   }
 }

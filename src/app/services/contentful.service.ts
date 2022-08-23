@@ -57,7 +57,9 @@ export class ContentfulService {
   }
 
   // return all products
-  getHomeInfo(id: string): any {
-    return this.client.getEntry(id).then((entry) => entry.fields);
+  getAboutInfo(id: string, lang: string): any {
+    return this.client
+      .getEntry(id, { locale: lang })
+      .then((entry) => entry.fields);
   }
 }
