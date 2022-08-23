@@ -3,12 +3,13 @@
     <div class="card-body m-3">
       <h1>Transportes Playa Colorada</h1>
       <p>
-        Es un transporte que ofrecemos de manera colectiva o privada cotizando
-        los precios según la disponibilidad del transporte y la cantidad de
-        personas.
+        {{
+          "It is a transport that we offer collectively or privately, quoting prices according to the availability of transport and the number of people."
+            | translate
+        }}
       </p>
       <br />
-      <h3>Horarios:</h3>
+      <h3>{{ "Schedules:" | translate }}</h3>
       <br />
       <div class="schedule-info">
         <ul *ngFor="let item of routes; let i = index">
@@ -16,7 +17,7 @@
             {{ item.fields.ruta[i] }}:
             <span>{{ item.fields.schedule[i] }}</span>
           </li>
-          <p>Precio por persona: ${{ item.fields.price }}</p>
+          <p>{{ "Price per person: " | translate }} ${{ item.fields.price }}</p>
         </ul>
       </div>
       <br />
@@ -26,7 +27,7 @@
     </div>
     <div class="wrap mt-5 mb-5">
       <button class="button" (click)="navigate()">
-        Pregunta por más información
+        {{ "Ask for more information" | translate }}
       </button>
     </div>
   </div>

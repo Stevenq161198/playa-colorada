@@ -1,7 +1,7 @@
 <div>
   <div class="tour-header mt-5 mx-3">
-    <h1>En Playa Colorada te ofrecemos los mejores Tours</h1>
-    <p>¡No dudes en contactarnos!</p>
+    <h1>{{ "In Playa Colorada we offer you the best Tours" | translate }}</h1>
+    <p>{{ "Do not hesitate to contact us!" | translate }}</p>
   </div>
   <div class="skeleton mt-5" *ngIf="!this.isDataTour">
     <ngx-skeleton-loader appearance="line"></ngx-skeleton-loader>
@@ -19,11 +19,13 @@
       <li *ngFor="let data of tour.includes">{{ data }}</li>
     </ul>
     <br />
-    <p class="font-weight-bold">Rutas:</p>
+    <p class="font-weight-bold">{{ "Routes:" | translate }}</p>
     <div class="routes-info">
       <p *ngFor="let route of tour.routes; let i = index">
         {{ route }}:
-        <span class="text-decoration-line">${{ tour.prices[i] }}</span>
+        <span class="text-decoration-line"
+          >${{ tour.prices[i] }} {{ " per person" | translate }}</span
+        >
       </p>
     </div>
     <br />
@@ -71,7 +73,9 @@
 
     <br />
     <div class="wrap mt-5">
-      <button class="button" (click)="navigate()">Contactanos</button>
+      <button class="button" (click)="navigate()">
+        {{ "Contact us" | translate }}
+      </button>
     </div>
   </div>
 </div>

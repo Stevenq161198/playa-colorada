@@ -1,6 +1,8 @@
 <div class="about">
   <div class="card mt-5">
-    <div class="card-header"><h2>¿Quiénes somos?</h2></div>
+    <div class="card-header">
+      <h2>{{ "About us?" | translate }}</h2>
+    </div>
     <div class="card-img mt-5">
       <div class="carrusel-img">
         <div
@@ -47,14 +49,14 @@
     <div class="card-body m-3">
       <br />
       <div class="info-card">
-        <h5 class="card-title">Un poco de nosotros</h5>
+        <h5 class="card-title">{{ "A little about us" | translate }}</h5>
         <p class="card-text">
           {{ data.description }}
         </p>
       </div>
       <br />
       <div class="info-card">
-        <h5 class="card-title">Misión y Visión</h5>
+        <h5 class="card-title">{{ "Mission and vision" | translate }}</h5>
         <p class="card-text">
           {{ data.misionVision }}
         </p>

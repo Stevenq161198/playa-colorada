@@ -1,8 +1,8 @@
 <section class="sec1">
   <div class="flex-container">
     <div class="flex-item-left">
-      <h1>Ready for</h1>
-      <h3>a new</h3>
+      <h1>{{ "Ready for" | translate }}</h1>
+      <h3>{{ "a new" | translate }}</h3>
       <div>
         <svg xmlns="http://www.w3.org/2000/svg">
           <!-- filterUnits is required to prevent clipping the blur outside the viewBox -->
@@ -16,7 +16,7 @@
 
         <!-- We use a custom attribute to set the text that the pseudo element should display and blur. In this case, we use the first character of the word. -->
 
-        <span filter-content="S">Adventure?</span>
+        <span filter-content="S">{{ "Adventure?" | translate }}</span>
       </div>
     </div>
     <div class="flex-item-right">
@@ -26,12 +26,16 @@
 </section>
 <section class="sec2">
   <div class="sec2-text">
-    <h1>Bienvenidos a <span>Transportes Playa Colorada!</span></h1>
+    <h1>
+      {{ "Welcome to" | translate }} <span>Transportes Playa Colorada!</span>
+    </h1>
     <br />
-    <h2>Ven y disfruta con nosotros de las maravillas de Bahia Drake</h2>
+    <h2>{{ "Come and enjoy with us the wonders of Drake Bay" | translate }}</h2>
     <h3>
-      Siempre teniendo en cuenta las prácticas de seguridad y el turismo
-      responsable
+      {{
+        "Always taking into account safety practices and responsible tourism"
+          | translate
+      }}
     </h3>
   </div>
   <div class="cta-two"></div>
@@ -39,29 +43,33 @@
 </section>
 <section class="sec3">
   <div>
-    <h1><span>Ven y disfruta!</span></h1>
+    <h1>
+      <span>{{ "Come and enjoy!" | translate }}</span>
+    </h1>
     <div class="sec3-item pt-5">
       <div class="sec3-l">
-        <h2>Bahia Drake</h2>
-        <p>
-          Un destino donde puedes conocer lugares como lo es el río Agujitas y
-          sus senderos, a su vez visitar las playas más importantes. Este es un
-          pueblo de Osa que cuenta con todas las comodidades como hoteles,
-          restaurantes y supermercados. Además, te invitamos a descubrir lo
-          fascinante que es el pueblo de Sierpe ya que para poder llegar a Bahia
-          Drake se debe de realizar un viaje de aproximadamente una hora y
-          veinte minutos.
+        <h2>{{ "Drake bay" | translate }}</h2>
+        <p class="justify-text">
+          {{
+            "A destination where you can get to know places such as the Agujitas River and its trails, as well as visit the most important beaches. This is a town in the Osa that has all the amenities such as hotels, restaurants and supermarkets. In addition, we invite you to discover how fascinating the town of Sierpe is, since in order to get to Drake Bay you must make a trip of approximately one hour and twenty minutes."
+              | translate
+          }}
         </p>
         <br />
-        <h1>¿Qué ofrecemos?</h1>
+        <h1>{{ "What we offer?" | translate }}</h1>
         <p>
-          Transporte • Tours a playas • Tours de senderos • Actvidades acuaticas
+          {{
+            "Transportation • Beach tours • Trail tours • Water activities"
+              | translate
+          }}
         </p>
         <p>
-          ¡Échale un vistazo a nuestra seccion de Tours para más información!
+          {{
+            "Take a look at our Tours section for more information!" | translate
+          }}
         </p>
         <br />
-        <p>También ofrecemos hospedaje</p>
+        <p>{{ "We also offer lodging" | translate }}</p>
         <i class="fa-brands fa-airbnb fa-2xl"></i>
         <p>Airbnb</p>
       </div>
@@ -71,7 +79,7 @@
     </div>
     <div class="wrap mt-5 pt-5">
       <button class="button" (click)="navigate()">
-        Pregunta por más información
+        {{ "Ask for more information" | translate }}
       </button>
     </div>
   </div>
