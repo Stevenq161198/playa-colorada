@@ -29,7 +29,7 @@
   }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1050px) {
   .img-fit {
     height: 450px !important;
     width: 700px !important;
@@ -37,6 +37,10 @@
   .data-tour {
     margin-top: 3rem !important;
     margin: 1rem !important;
+  }
+  .tour-header {
+    margin-right: 1rem !important;
+    margin-left: 1rem !important;
   }
 }
 

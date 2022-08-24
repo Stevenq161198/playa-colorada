@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, HostListener, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { Entry } from "contentful";
 import { ContentfulService } from "src/app/services/contentful.service";
@@ -13,6 +13,8 @@ export class NavbarComponent implements OnInit {
 
   lang: any;
 
+  isMobileLayout = false;
+
   constructor(
     private router: Router,
     private contentfulService: ContentfulService
@@ -21,6 +23,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.lang = localStorage.getItem("lang") || "en";
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+
+    window.onresize = () => (this.isMobileLayout = window.innerWidth <= 991);
 
     this.contentfulService
       .getProducts()

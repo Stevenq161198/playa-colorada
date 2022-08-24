@@ -33,14 +33,14 @@ export class ToursComponent implements OnInit {
 
       //this.contentfulService.logContent("7cMTrKgW9T3gIFayvajDc");
     });
-    this.lang = localStorage.getItem("lang") || "en";
+    this.lang = localStorage.getItem("lang") || "en-US";
     this.getData();
   }
 
   async getData() {
     this.tour = await this.contentfulService.getProduct(this.tourId, this.lang);
     this.isDataLoaded(this.tour);
-    console.log("tour: ", this.tour);
+    //console.log("tour: ", this.tour);
   }
 
   isDataLoaded(data: any) {

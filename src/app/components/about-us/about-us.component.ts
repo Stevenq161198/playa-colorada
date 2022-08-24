@@ -22,7 +22,7 @@ export class AboutUsComponent implements OnInit {
     this.data = {};
     this.isData = false;
 
-    this.lang = localStorage.getItem("lang") || "en";
+    this.lang = localStorage.getItem("lang") || "en-US";
     this.getData();
   }
 
@@ -32,7 +32,7 @@ export class AboutUsComponent implements OnInit {
       this.lang
     );
     this.isDataLoaded(this.data);
-    console.log("data: ", this.data);
+    //console.log("data: ", this.data);
   }
 
   isDataLoaded(data: any) {
