@@ -12,6 +12,7 @@ export const environment = {
       //The property name angularPost can be whatever
       //what matters in the value which is the content type Id.
       sections: "sections",
+      aboutInfo: "homeInfo",
       products: "products",
     },
   },
