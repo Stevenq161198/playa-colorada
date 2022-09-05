@@ -1,0 +1,81 @@
+<div>
+  <div class="tour-header mt-5 mx-5">
+    <h1>{{ "In Playa Colorada we offer you the best Tours" | translate }}</h1>
+    <p>{{ "Do not hesitate to contact us!" | translate }}</p>
+  </div>
+  <div class="skeleton mt-5" *ngIf="!this.isDataTour">
+    <ngx-skeleton-loader appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader appearance="line"></ngx-skeleton-loader>
+    <br />
+    <ngx-skeleton-loader appearance="line"></ngx-skeleton-loader>
+  </div>
+  <div class="data-tour" *ngIf="this.isDataTour">
+    <h2>{{ tour.title }}</h2>
+    <br />
+    <p>{{ tour.description }}</p>
+    <br />
+    <h3>{{ "What is included?" | translate }}</h3>
+    <ul>
+      <li *ngFor="let data of tour.includes">{{ data }}</li>
+    </ul>
+    <br />
+    <p class="font-weight-bold">{{ "Routes:" | translate }}</p>
+    <div class="routes-info">
+      <p *ngFor="let route of tour.routes; let i = index">
+        {{ route }}:
+        <span class="text-decoration-line"
+          >${{ tour.prices[i] }} {{ " per person" | translate }}</span
+        >
+      </p>
+    </div>
+    <br />
+    <hr size="30" noshade class="line" />
+    <br />
+    <div class="img-carrusel">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div
+            class="carousel-item"
+            *ngFor="let image of tour.images; first as isFirst"
+            [ngClass]="{ active: isFirst }"
+          >
+            <img
+              class="img-fit"
+              src="{{ image.fields.file.url }}"
+              alt="Photo"
+            />
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <br />
+    <div class="wrap mt-5">
+      <button class="button" (click)="navigate()">
+        {{ "Contact us" | translate }}
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.navbar {
+  background-color: #005f87;
+
+  padding: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.logo-img {
+  height: 13vh;
+  width: 13vh;
+  margin: 0;
+  padding: 0;
+}
+
+#navbarSupportedContent a:hover {
+  animation: bounce 1s infinite;
+}
+
+.custom-select {
+  background-color: transparent;
+  border: none;
+  color: white;
+}

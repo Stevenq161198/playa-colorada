@@ -1,0 +1,19 @@
+.scroll-up {
+  display: flex;
+  justify-content: end;
+  justify-items: center;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+.scroll-up-btn {
+  //position: fixed;
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent;
+  border-style: none;
+  z-index: 99;
+  border: none;
+  outline: none;
+
+  animation: bounce 1s infinite;
+}

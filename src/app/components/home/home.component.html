@@ -1,0 +1,91 @@
+<section class="sec1">
+  <div class="flex-container">
+    <div class="flex-item-left">
+      <h1>{{ "Ready for" | translate }}</h1>
+      <h3>{{ "a new" | translate }}</h3>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <!-- filterUnits is required to prevent clipping the blur outside the viewBox -->
+
+          <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+            <!-- We only want horizontal blurring. x: 100, y: 0 -->
+
+            <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+          </filter>
+        </svg>
+
+        <!-- We use a custom attribute to set the text that the pseudo element should display and blur. In this case, we use the first character of the word. -->
+
+        <span filter-content="S">{{ "Adventure?" | translate }}</span>
+      </div>
+    </div>
+    <div class="flex-item-right">
+      <img src="assets/img/logo.png" alt="" class="logo-home" />
+    </div>
+  </div>
+</section>
+<section class="sec2">
+  <div class="sec2-text">
+    <h1>
+      {{ "Welcome to" | translate }} <span>Transportes Playa Colorada!</span>
+    </h1>
+    <br />
+    <h2>{{ "Come and enjoy with us the wonders of Drake Bay" | translate }}</h2>
+    <h3>
+      {{
+        "Always taking into account safety practices and responsible tourism"
+          | translate
+      }}
+    </h3>
+  </div>
+  <div class="cta-two"></div>
+  <!-- <img src="assets/img/wave.png" class="wave" alt="" /> -->
+</section>
+<section class="sec3">
+  <div>
+    <h1>
+      <span>{{ "Come and enjoy!" | translate }}</span>
+    </h1>
+    <div class="sec3-item pt-5">
+      <div class="sec3-l">
+        <h2>{{ "Drake bay" | translate }}</h2>
+        <p class="justify-text">
+          {{
+            "A destination where you can get to know places such as the Agujitas River and its trails, as well as visit the most important beaches. This is a town in the Osa that has all the amenities such as hotels, restaurants and supermarkets. In addition, we invite you to discover how fascinating the town of Sierpe is, since in order to get to Drake Bay you must make a trip of approximately one hour and twenty minutes."
+              | translate
+          }}
+        </p>
+        <br />
+        <h1>{{ "What we offer?" | translate }}</h1>
+        <p>
+          {{
+            "Transportation • Beach tours • Trail tours • Water activities"
+              | translate
+          }}
+        </p>
+        <p>
+          {{
+            "Take a look at our Tours section for more information!" | translate
+          }}
+        </p>
+        <br />
+        <p>{{ "We also offer lodging" | translate }}</p>
+        <a href="https://www.airbnb.com/h/casitacoloradasierpe" target="_blank">
+          <i
+            class="fa-brands fa-airbnb fa-2xl"
+            href="https://www.airbnb.com/h/casitacoloradasierpe"
+          ></i
+        ></a>
+        <p>Airbnb</p>
+      </div>
+      <div class="sec3-r">
+        <img src="assets/img/Drake.jpeg" alt="" />
+      </div>
+    </div>
+    <div class="wrap mt-5 pt-5">
+      <button class="button" (click)="navigate()">
+        {{ "Ask for more information" | translate }}
+      </button>
+    </div>
+  </div>
+</section>
